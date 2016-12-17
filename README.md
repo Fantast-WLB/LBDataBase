@@ -6,7 +6,6 @@
 
 
         ///从本地名为DataTableName的表中取得保存名为DataName的LBModel模型数组
-        
         [LBModel lb_objectArrayNamed:DataName InTable:DataTableName FinishedBlock:^(NSArray *models) {
         
                 if (models == nil)
@@ -24,4 +23,7 @@
                     weakSelf.models = models;
                 }
         }];
-
+        
+        
+        ///在本地保存模型数组到名为DataTableName的表里，保存名为DataName
+        [weakSelf.models lb_saveToDBNamed:DataName InTable:DataTableName];
